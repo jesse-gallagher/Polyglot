@@ -1,0 +1,29 @@
+<theme extends="bootstrap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
+	<resources>
+		<styleSheet type="text/css" href="/style.css"/>
+		
+		<script src="/ui.js" clientSide="true"/>
+		
+		<script type="text/javascript" clientSide="true" src="/codemirror/lib/codemirror.js"/>
+		<styleSheet href="/codemirror/lib/codemirror.css"/>
+		<styleSheet href="/codemirror-fnv.css"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/clike/clike.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/xml/xml.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/css/css.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/htmlmixed/htmlmixed.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/htmlembedded/htmlembedded.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/javascript/javascript.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/ruby/ruby.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/php/php.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/clojure/clojure.js"/>
+		<script type="text/javascript" clientSide="true" src="/codemirror/mode/groovy/groovy.js"/>
+	</resources>
+
+	<control>
+		<name>ViewRoot</name>
+		<property>
+			<name>pageIcon</name>
+			<value>/$Icon</value>
+		</property>
+	</control>
+</theme>

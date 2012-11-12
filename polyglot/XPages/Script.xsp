@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Script"
+	afterPageLoad="#{pageController.afterPageLoad}">
+
+	<xp:this.dataContexts>
+		<xp:dataContext var="pageController" value="${javascript: new frostillicus.controller.ScriptDocumentController('doc')}" />
+	</xp:this.dataContexts>
+
+	<xp:this.data>
+		<xp:dominoDocument var="doc" action="newDocument" formName="${'Script'}"/>
+	</xp:this.data>
+	
+	<xp:eventHandler event="onClientLoad" submit="false" rendered="#{!(doc.Language == null or doc.Language == '')}"><xp:this.script><![CDATA[
+		create_code_mirror("#{id:Body}", "#{javascript:doc.getValue('Language').toLowerCase()}")
+	]]></xp:this.script></xp:eventHandler>
+
+	<xc:layout>
+		<div class="form-horizontal">
+			<xc:bsControlGroup label="Name">
+				<xp:inputText id="Name" value="#{doc.Name}" required="true"/>
+			</xc:bsControlGroup>
+			<xc:bsControlGroup label="Language">
+				<xp:comboBox id="Language" value="#{doc.Language}" required="true" defaultValue="#{param.scriptLanguage}">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete" disableValidators="true"/>
+					<xp:selectItem itemLabel="- Choose -" itemValue=""/>
+					<xp:selectItems><xp:this.value><![CDATA[${javascript:
+						var factories = (new javax.script.ScriptEngineManager()).getEngineFactories()
+						var result = new java.util.TreeSet()
+						for(var i = 0; i < factories.length; i++) {
+							result.add(factories[i].getEngineName() + "|" + factories[i].getLanguageName())
+						}
+						return new java.util.ArrayList(result)
+					}]]></xp:this.value></xp:selectItems>
+				</xp:comboBox>
+			</xc:bsControlGroup>
+		</div>
+		<xp:div id="scriptBody">
+			<xp:inputTextarea id="Body" rows="20" style="width: 100%" rendered="#{!(doc.Language == '' or doc.Language == null)}"/>
+		</xp:div>
+		
+		<xp:panel rendered="#{!pageController.newNote}" styleClass="actions" tagName="p">
+			<xp:link value="/ScriptRunner.xsp?scriptName=#{doc.Name}" text="Run Script"/>
+		</xp:panel>
+		
+		<p class="actions">
+			<xp:button id="editDocument" value="Edit" rendered="#{!pageController.editable and database.currentAccessLevel ge 4}">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" disableValidators="true" action="edit-document"/>
+			</xp:button>
+			&#160;
+			<xp:button id="saveDocument" value="Save" rendered="#{pageController.editable}" themeId="Button.Submit">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="false" action="#{pageController.save}"/>
+			</xp:button>
+			&#160;
+			<xp:button id="cancel" value="Cancel" rendered="#{pageController.editable}">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true" action="#{pageController.cancel}" disableValidators="true"/>
+			</xp:button>
+		</p>
+	</xc:layout>
+	
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="xsp-success" viewId="/Scripts"/>
+	</xp:this.navigationRules>
+</xp:view>

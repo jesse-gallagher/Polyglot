@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<xp:link styleClass="brand" value="/" text="${database.title}"/>
+				
+				<div class="nav-collapse">
+					<ul class="nav">
+<!--						<li class="${view.pageName=='/Projects.xsp' ? 'active' : ''}"><xp:link value="/Projects.xsp" text="Projects"/></li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+	<div class="container">
+		<header class="jumbotron subhead">
+			<div class="row">
+				<div class="span12">
+					<xp:text value="#{javascript:compositeData.pageTitle ? compositeData.pageTitle : view.pageTitle}" styleClass="" tagName="h2"/>
+				</div>
+			</div>
+		</header>
+	
+		<div class="row">
+			<div class="span10 offset1">
+				<xc:messages/>
+			
+				<xp:callback/>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="span12">
+				<footer class="footer">
+					<p>© 2012 Jesse Gallagher</p>
+				</footer>
+			</div>
+		</div>
+	</div>
+	
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="go-home" viewId="/Projects.xsp"/>
+	</xp:this.navigationRules>
+</xp:view>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Scripts" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xc:layout>
+
+		<xe:dynamicViewPanel id="dynamicViewPanel1" dataTableStyleClass="table">
+			<xe:this.data>
+				<xp:dominoView var="view1" viewName="Scripts"/>
+			</xe:this.data>
+		</xe:dynamicViewPanel>
+
+
+		<p class="actions">
+			<xp:link value="/Script.xsp" text="New Script"/>
+		</p>
+	</xc:layout>
+</xp:view>

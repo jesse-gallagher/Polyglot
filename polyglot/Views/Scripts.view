@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='85257AB30078EC92'>
+<noteinfo noteid='1d2' unid='6E5F27DAFA764DB485257AB30079A033' sequence='7'>
+<created><datetime>20121111T170828,67-05</datetime></created>
+<modified><datetime>20121111T181916,07-05</datetime></modified>
+<revised><datetime>20121111T181916,06-05</datetime></revised>
+<lastaccessed><datetime>20121111T181916,06-05</datetime></lastaccessed>
+<addedtofile><datetime>20121111T170828,73-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name='$FormatNote' summary='true'>
+<rawitemdata type='4'>
+AQCU7G6FoWlsP/FjaADvdyWF
+</rawitemdata></item>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>Scripts</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+VAAFACoAJQAEAAQACAAJAAQATmFtZUxhbmd1YWdlJENvbmZsaWN0JFJFRgAEAAQAAAAaAAUABABG
+b3JtAQAGAFNjcmlwdAoCAwAHAAoABAAJTDFT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+EQABAABEgGYAAAAEAE5hbWU=
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQACAAQAiEAAAFZDAQAEAAQAAAAAAFAAAQAACgAAAAAAAAAAAAICAAAAVkMAAAgACAAAAAAAUAAB
+AAAKAAAAAAAAAAAAAgIAAABOYW1lTmFtZUxhbmd1YWdlTGFuZ3VhZ2UmAAEAAAABAQAJAQAACgEB
+DgoAAD8ArSsBAAEAAQAAAAAAAAAAAFdDAQUACQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAP//AAAA
+AAAAAAAAAAAAAABXQwEBAAkAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAD//wAAAAAAAAAAAAAAAAAA
+QgARAAAAAQD///8AAQDv7+8AAQD///8AAAAAAAAAAAABAP///wABAP///wAAAAEAAAAAAAEAAAAA
+AAEAAAAAAAAACAAAAAAAAQA=
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$XPageAlt'><text>Scripts.xsp</text></item>
+<item name='$Flags'><text>PY</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRwjAAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABANTQyAABAAAAAAAJAAAAAAABANTQyAAA
+AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=
+</rawitemdata></item></note>
+

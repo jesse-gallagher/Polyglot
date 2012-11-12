@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="control-group">
+		<xp:label styleClass="control-label" value="#{compositeData.label}">
+			<xp:this.for><![CDATA[#{javascript:
+				if(compositeData["for"]) { return compositeData["for"] }
+				var callback = getComponent("controlCallback")
+				if(callback.children.length > 0) {
+					return callback.children[0].id
+				}
+				return ""
+			}]]></xp:this.for>
+		</xp:label>
+		<div class="controls">
+			<xp:callback id="controlCallback"/>
+		</div>
+	</div>
+</xp:view>

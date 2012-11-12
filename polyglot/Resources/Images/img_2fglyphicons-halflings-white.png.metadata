@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AB30078EC92" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1fe" sequence="2" unid="50B82CBFE3B8B82A85257AB30079B58C">
+<created><datetime>20121111T170923,32-05</datetime></created>
+<modified><datetime>20121111T171809,42-05</datetime></modified>
+<revised><datetime>20121111T171809,41-05</datetime></revised>
+<lastaccessed><datetime>20121111T171809,41-05</datetime></lastaccessed>
+<addedtofile><datetime>20121111T170923,41-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>D34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$FileModDT" sign="true"><datetime dst="true">20121030T213818,00-04</datetime></item>
+<item name="$ImageNames" sign="true"><text>glyphicons-halflings-white.png</text></item>
+<item name="$TITLE" sign="true"><text>img/glyphicons-halflings-white.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>
