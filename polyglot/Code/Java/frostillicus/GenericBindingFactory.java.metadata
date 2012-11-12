@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AB30078EC92" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4e6" sequence="2" unid="D8B132AEB624AB9C85257AB40045665D">
+<created><datetime>20121112T073801,89-05</datetime></created>
+<modified><datetime>20121112T073801,94-05</datetime></modified>
+<revised><datetime>20121112T073801,93-05</datetime></revised>
+<lastaccessed><datetime>20121112T073801,93-05</datetime></lastaccessed>
+<addedtofile><datetime>20121112T073801,91-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>frostillicus/GenericBindingFactory.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>frostillicus/GenericBindingFactory.java</text></item></note>

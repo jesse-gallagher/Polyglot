@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Scripting Tests">
+
+	<xc:layout>
+		<h3>Ruby</h3>
+		<xp:text tagName="p" value="${ruby:'this is text computed from Ruby in #{database.filePath}'}" styleClass=""/>
+		
+		<p><xp:inputText value="#{viewScope.rubyText}"/></p>
+		<p>
+			<xp:button id="rubyButton" value="Click Me">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="rubyRefresher">
+					<xp:this.action><![CDATA[#{ruby:
+						viewScope["rubyResult"] = viewScope["rubyText"].reverse
+					}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</p>
+		<xp:panel id="rubyRefresher"><xp:text value="#{viewScope.rubyResult}"/></xp:panel>
+	</xc:layout>
+</xp:view>

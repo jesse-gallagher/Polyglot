@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AB30078EC92" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4ea" sequence="13" unid="6A1D28366EBD292785257AB40046D886">
+<created><datetime>20121112T075349,50-05</datetime></created>
+<modified><datetime>20121112T075850,63-05</datetime></modified>
+<revised><datetime>20121112T075850,61-05</datetime></revised>
+<lastaccessed><datetime>20121112T075850,61-05</datetime></lastaccessed>
+<addedtofile><datetime>20121112T075349,51-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=MTC</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE"><text>ScriptPlayground.xsp</text></item>
+
+<item name="$DesignerVersion"><text>8.5.2</text></item>
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>ScriptPlayground.xsp</text></item></note>

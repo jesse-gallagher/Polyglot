@@ -2,6 +2,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Home">
 
 	<xc:layout>
-		
+		<p><xp:link value="/Scripts.xsp" text="Scripts"/></p>
+		<p><xp:link value="/ScriptPlayground.xsp" text="Scripting Tests"/></p>
 	</xc:layout>
 </xp:view>
