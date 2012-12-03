@@ -199,7 +199,8 @@ public class GenericBindingFactory implements BindingFactory {
 		FacesContext context = FacesContext.getCurrentInstance();
 
 		String language = engine.getFactory().getLanguageName();
-		List<String> mimeTypes = engine.getFactory().getMimeTypes();
+		Set<String> mimeTypes = new HashSet<String>(engine.getFactory().getMimeTypes());
+		mimeTypes.add("text/x-script-" + language);
 
 		Set<String> includedLibraries = (Set<String>)getScopeMap().get("_" + language + "IncludedLibraries");
 		if(includedLibraries == null) {

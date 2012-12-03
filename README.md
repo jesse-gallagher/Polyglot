@@ -20,3 +20,5 @@ Like Ruby-in-XPages, the generic binding feature allows the use of scripting lan
 	<xp:text value="#{ruby: TestClass.new.someMethod }"/>
 
 The scope of the runtime is set to the current request but can be switched to the application via the RUNTIME scope property of frostillicus.GenericBindingFactory.
+
+Scripting languages are made available using any of the names in the "Names" column on Home.xsp (except Rhino's "javascript", which is used for SSJS instead). The "type" specified for Script Libraries can be any of the values in the "MIME Types" column or "text/x-script-#{languageName}" as a fallback for languages without MIME types listed.
