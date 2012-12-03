@@ -39,6 +39,8 @@ import com.ibm.xsp.resource.ScriptResource;
 import com.ibm.xsp.util.ValueBindingUtil;
 
 public class GenericBindingFactory implements BindingFactory {
+	public static RuntimeScope RUNTIME_SCOPE = RuntimeScope.REQUEST;
+
 	private String language;
 
 	public GenericBindingFactory(String language) {
@@ -83,8 +85,6 @@ public class GenericBindingFactory implements BindingFactory {
 		@SuppressWarnings("unchecked")
 		@Override
 		public Class getType(FacesContext arg0) throws MethodNotFoundException {
-			//return Object.class;
-
 			return null;
 		}
 
@@ -233,6 +233,17 @@ public class GenericBindingFactory implements BindingFactory {
 
 	@SuppressWarnings("unchecked")
 	protected static Map<Object, Object> getScopeMap() {
-		return FacesContext.getCurrentInstance().getExternalContext().getApplicationMap();
+		switch(RUNTIME_SCOPE) {
+		case APPLICATION:
+			return FacesContext.getCurrentInstance().getExternalContext().getApplicationMap();
+		case REQUEST:
+			return FacesContext.getCurrentInstance().getExternalContext().getRequestMap();
+		}
+		return null;
+	}
+
+	public static enum RuntimeScope {
+		APPLICATION,
+		REQUEST
 	}
 }

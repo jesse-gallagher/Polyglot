@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Home">
+	<xp:this.dataContexts>
+		<xp:dataContext var="scriptingEngines"
+			value="#{ruby: javax.script.ScriptEngineManager.new.engine_factories.sort { |a, b| a.engineName.downcase &lt;=&gt; b.engineName.downcase } }" />
+	</xp:this.dataContexts>
 
 	<xc:layout>
 		<p><xp:link value="/Scripts.xsp" text="Scripts"/></p>
 		<p><xp:link value="/ScriptPlayground.xsp" text="Scripting Tests"/></p>
+		
+		<hr />
+		
+		<h3>Installed Scripting Engines</h3>
+		<xp:dataTable styleClass="table table-bordered table-condensed table-striped" value="#{scriptingEngines}" var="engine">
+			<xp:column>
+				<xp:this.facets><xp:text xp:key="header" value="Name"/></xp:this.facets>
+				<xp:text value="#{engine.engineName}"/>
+			</xp:column>
+			<xp:column>
+				<xp:this.facets><xp:text xp:key="header" value="Version"/></xp:this.facets>
+				<xp:text value="#{engine.engineVersion}"/>
+			</xp:column>
+			<xp:column>
+				<xp:this.facets><xp:text xp:key="header" value="Extensions"/></xp:this.facets>
+				<xp:text value="#{javascript:engine.extensions.join('&lt;br /&gt;')}" escape="false"/>
+			</xp:column>
+			<xp:column>
+				<xp:this.facets><xp:text xp:key="header" value="Language"/></xp:this.facets>
+				<xp:text value="#{engine.languageName}"/>
+			</xp:column>
+			<xp:column>
+				<xp:this.facets><xp:text xp:key="header" value="Language Version"/></xp:this.facets>
+				<xp:text value="#{engine.languageVersion}"/>
+			</xp:column>
+			<xp:column>
+				<xp:this.facets><xp:text xp:key="header" value="MIME Types"/></xp:this.facets>
+				<xp:text value="#{javascript:engine.mimeTypes.join('&lt;br /&gt;')}" escape="false"/>
+			</xp:column>
+			<xp:column>
+				<xp:this.facets><xp:text xp:key="header" value="Names"/></xp:this.facets>
+				<xp:text value="#{javascript:engine.names.join('&lt;br /&gt;')}" escape="false"/>
+			</xp:column>
+		</xp:dataTable>
 	</xc:layout>
 </xp:view>
