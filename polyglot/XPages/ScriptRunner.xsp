@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	afterRenderResponse="#{javascript:pageController.afterRenderResponse()}" rendered="false">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" disableTheme="true"
+	beforeRenderResponse="#{javascript:pageController.beforeRenderResponse()}" afterRenderResponse="#{javascript:pageController.afterRenderResponse()}">
 
 	<xp:this.dataContexts>
 		<xp:dataContext var="pageController" value="${javascript: new frostillicus.controller.ScriptRunnerController()}" />
 	</xp:this.dataContexts>
-d
 </xp:view>
