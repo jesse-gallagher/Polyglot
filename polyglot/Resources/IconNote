@@ -2,13 +2,14 @@
 <!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='8.5'
  maintenanceversion='3.0' replicaid='85257AB30078EC92'>
-<noteinfo noteid='11a' unid='B83B02AEE0186948852577EF006863FB' sequence='12'>
+<noteinfo noteid='11a' unid='B83B02AEE0186948852577EF006863FB' sequence='13'>
 <created><datetime>20101204T140013,39-05</datetime></created>
-<modified><datetime>20121111T182821,92-05</datetime></modified>
-<revised><datetime>20121111T182821,90-05</datetime></revised>
-<lastaccessed><datetime>20121111T182821,90-05</datetime></lastaccessed>
+<modified><datetime>20121112T075708,40-05</datetime></modified>
+<revised><datetime>20121112T075708,39-05</datetime></revised>
+<lastaccessed><datetime>20121112T075708,39-05</datetime></lastaccessed>
 <addedtofile><datetime>20121111T170049,21-05</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name><name
+>CN=Jesse Gallagher/O=MTC</name></updatedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
@@ -27,10 +28,10 @@ AAAAUEECICABAAD/////+A4DgA==
 <item name='$DefaultFrameset'><text>Outer Frame</text></item>
 <item name='$Daos'><text>0</text></item>
 <item name='$DBTheme'><text>Theme.theme</text></item>
-<item name='$DefaultXPage'><text>Scripts.xsp</text></item>
 <item name='$TITLE'><text>Polyglot
 </text></item>
 <item name='$Flags'><text>J7FKzNZ4q!</text></item>
 <item name='$FlagsNoRefresh'><text/></item>
-<item name='$AllowPost8HTML'><text>1</text></item></note>
+<item name='$AllowPost8HTML'><text>1</text></item>
+<item name='$DefaultXPage'><text>Home.xsp</text></item></note>
 

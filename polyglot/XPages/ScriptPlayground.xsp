@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Scripting Tests">
 
+	<xp:this.resources>
+		<xp:script clientSide="false" type="application/x-ruby" src="/test.rb"/>
+	</xp:this.resources>
+
 	<xc:layout>
 		<h3>Ruby</h3>
 		<xp:text tagName="p" value="${ruby:'this is text computed from Ruby in #{database.filePath}'}" styleClass=""/>
@@ -16,5 +20,7 @@
 			</xp:button>
 		</p>
 		<xp:panel id="rubyRefresher"><xp:text value="#{viewScope.rubyResult}"/></xp:panel>
+		
+		<p><xp:text value="#{ruby:TestClass.new.foo}"/></p>
 	</xc:layout>
 </xp:view>

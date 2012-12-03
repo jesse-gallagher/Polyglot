@@ -16,7 +16,8 @@
 
 package frostillicus;
 
-import java.io.Serializable;
+import java.io.*;
+import java.util.*;
 
 import javax.faces.application.Application;
 import javax.faces.component.StateHolder;
@@ -32,6 +33,9 @@ import javax.script.ScriptException;
 import com.ibm.xsp.binding.BindingFactory;
 import com.ibm.xsp.binding.MethodBindingEx;
 import com.ibm.xsp.binding.ValueBindingEx;
+import com.ibm.xsp.component.UIViewRootEx2;
+import com.ibm.xsp.resource.Resource;
+import com.ibm.xsp.resource.ScriptResource;
 import com.ibm.xsp.util.ValueBindingUtil;
 
 public class GenericBindingFactory implements BindingFactory {
@@ -84,16 +88,17 @@ public class GenericBindingFactory implements BindingFactory {
 			return null;
 		}
 
-		@SuppressWarnings("unchecked")
 		@Override
 		public Object invoke(FacesContext context, Object[] arg1) throws EvaluationException, MethodNotFoundException {
 			Object result = null;
 			try {
-				ScriptEngine engine = (ScriptEngine)FacesContext.getCurrentInstance().getExternalContext().getApplicationMap().get("_" + language + "ScriptEngine");
+				ScriptEngine engine = (ScriptEngine)getScopeMap().get("_" + language + "ScriptEngine");
 				if(engine == null) {
 					engine = GenericBindingFactory.createScriptEngine(language);
-					FacesContext.getCurrentInstance().getExternalContext().getApplicationMap().put("_" + language + "ScriptEngine", engine);
+					getScopeMap().put("_" + language + "ScriptEngine", engine);
 				}
+
+				includeScriptLibraries(engine);
 
 				result = engine.eval(this.content);
 			}
@@ -147,16 +152,17 @@ public class GenericBindingFactory implements BindingFactory {
 			return Object.class;
 		}
 
-		@SuppressWarnings("unchecked")
 		@Override
 		public Object getValue(FacesContext context) throws EvaluationException, PropertyNotFoundException {
 			Object result = null;
 			try {
-				ScriptEngine engine = (ScriptEngine)FacesContext.getCurrentInstance().getExternalContext().getApplicationMap().get("_" + language + "ScriptEngine");
+				ScriptEngine engine = (ScriptEngine)getScopeMap().get("_" + language + "ScriptEngine");
 				if(engine == null) {
 					engine = GenericBindingFactory.createScriptEngine(language);
-					FacesContext.getCurrentInstance().getExternalContext().getApplicationMap().put("_" + language + "ScriptEngine", engine);
+					getScopeMap().put("_" + language + "ScriptEngine", engine);
 				}
+
+				includeScriptLibraries(engine);
 
 				result = engine.eval(this.content);
 			}
@@ -186,5 +192,47 @@ public class GenericBindingFactory implements BindingFactory {
 			arrayOfObject[2] = this.language;
 			return arrayOfObject;
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	protected static void includeScriptLibraries(ScriptEngine engine) throws ScriptException {
+		FacesContext context = FacesContext.getCurrentInstance();
+
+		String language = engine.getFactory().getLanguageName();
+		List<String> mimeTypes = engine.getFactory().getMimeTypes();
+
+		Set<String> includedLibraries = (Set<String>)getScopeMap().get("_" + language + "IncludedLibraries");
+		if(includedLibraries == null) {
+			includedLibraries = new HashSet<String>();
+			getScopeMap().put("_" + language + "IncludedLibraries", includedLibraries);
+		}
+
+		// Now look through the view's resources for appropriate scripts and load them
+		UIViewRootEx2 view = (UIViewRootEx2)context.getViewRoot();
+		if(view != null) {
+			for(Resource res : view.getResources()) {
+				if(res instanceof ScriptResource) {
+					ScriptResource script = (ScriptResource)res;
+					if(script.getType() != null && mimeTypes.contains(script.getType())) {
+						// Then we have a script - find its contents and run it
+
+						String properName = (script.getSrc().charAt(0) == '/' ? "" : "/") + script.getSrc();
+						if(!includedLibraries.contains(properName)) {
+							InputStream is = context.getExternalContext().getResourceAsStream("/WEB-INF/" + language + properName);
+							if(is != null) {
+								engine.eval(new InputStreamReader(is));
+							}
+
+							includedLibraries.add(properName);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	protected static Map<Object, Object> getScopeMap() {
+		return FacesContext.getCurrentInstance().getExternalContext().getApplicationMap();
 	}
 }
