@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 
-package frostillicus;
+package frostillicus.polyglot;
 
 import java.io.*;
 import java.util.*;
@@ -27,13 +27,13 @@ import javax.faces.el.MethodBinding;
 import javax.faces.el.MethodNotFoundException;
 import javax.faces.el.PropertyNotFoundException;
 import javax.faces.el.ValueBinding;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import javax.script.*;
+
 import com.ibm.xsp.binding.BindingFactory;
 import com.ibm.xsp.binding.MethodBindingEx;
 import com.ibm.xsp.binding.ValueBindingEx;
 import com.ibm.xsp.component.UIViewRootEx2;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 import com.ibm.xsp.resource.Resource;
 import com.ibm.xsp.resource.ScriptResource;
 import com.ibm.xsp.util.ValueBindingUtil;
@@ -66,6 +66,11 @@ public class GenericBindingFactory implements BindingFactory {
 	protected static ScriptEngine createScriptEngine(String language) throws ScriptException {
 		ScriptEngineManager manager = new ScriptEngineManager();
 		ScriptEngine engine = manager.getEngineByName(language);
+
+		ScriptContext scriptContext = engine.getContext();
+		Bindings bindings = scriptContext.getBindings(ScriptContext.ENGINE_SCOPE);
+		scriptContext.setBindings(new JSFBindings(bindings), ScriptContext.ENGINE_SCOPE);
+
 		return engine;
 	}
 

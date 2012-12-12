@@ -10,4 +10,5 @@
 
 	<p><xp:text value="#{formula: 'hello':'from':'formula':@Text(@DocumentUniqueID)}"/></p>
 	<p><xp:text value="#{doc.SomeField}"/></p>
+	<p><xp:text value="#{Groovy:database}"/></p>
 </xp:view>

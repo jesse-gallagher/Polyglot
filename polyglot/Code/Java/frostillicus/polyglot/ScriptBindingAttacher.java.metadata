@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AB30078EC92" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="522" sequence="3" unid="166F5970C06B6E2085257AD200722644">
+<created><datetime>20121212T154649,00-05</datetime></created>
+<modified><datetime>20121212T154650,36-05</datetime></modified>
+<revised><datetime>20121212T154650,35-05</datetime></revised>
+<lastaccessed><datetime>20121212T154650,35-05</datetime></lastaccessed>
+<addedtofile><datetime>20121212T154649,02-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>frostillicus/polyglot/ScriptBindingAttacher.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>frostillicus/polyglot/ScriptBindingAttacher.java</text></item></note>

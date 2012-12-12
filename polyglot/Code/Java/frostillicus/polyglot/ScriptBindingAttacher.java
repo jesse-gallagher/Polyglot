@@ -1,4 +1,4 @@
-package frostillicus;
+package frostillicus.polyglot;
 
 import java.io.Serializable;
 
