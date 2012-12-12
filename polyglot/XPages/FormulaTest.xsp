@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="doc" action="newDocument">
+			<xp:this.postNewDocument><![CDATA[#{formula:
+				@SetField("SomeField"; 1)
+			}]]></xp:this.postNewDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<p><xp:text value="#{formula: 'hello':'from':'formula':@Text(@DocumentUniqueID)}"/></p>
+	<p><xp:text value="#{doc.SomeField}"/></p>
+</xp:view>

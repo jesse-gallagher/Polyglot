@@ -23,6 +23,10 @@ public class ScriptBindingAttacher implements Serializable {
 					facts.setFactory(fac.getPrefix(), fac);
 				}
 			}
+
+			// Toss in formula while we're here
+			facts.setFactory("formula", new FormulaBindingFactory());
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
