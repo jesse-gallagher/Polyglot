@@ -2,8 +2,9 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<xp:this.data>
 		<xp:dominoDocument var="doc" action="newDocument">
-			<xp:this.postNewDocument><![CDATA[#{formula:
-				@SetField("SomeField"; 1)
+			<xp:this.postNewDocument><![CDATA[#{lotusscript:
+				dim session as new notessession
+				session.documentcontext.SomeField = "ugh"
 			}]]></xp:this.postNewDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
