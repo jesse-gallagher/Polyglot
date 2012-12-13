@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="85257AB30078EC92" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="546" sequence="3" unid="ADDBE8E37B2628E485257AD3004420BD">
+<created><datetime>20121213T072408,29-05</datetime></created>
+<modified><datetime>20121213T072408,48-05</datetime></modified>
+<revised><datetime>20121213T072408,47-05</datetime></revised>
+<lastaccessed><datetime>20121213T072408,47-05</datetime></lastaccessed>
+<addedtofile><datetime>20121213T072408,30-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>frostillicus/polyglot/FormulaBindingFactory.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>frostillicus/polyglot/FormulaBindingFactory.java</text></item></note>
